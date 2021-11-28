@@ -5,7 +5,7 @@ from myapp.models import Info
 
     
 def index(request):
-    return render(request,'index3.html')
+    return render(request,'index.html')
 
 def login(request):
     if request.method == "POST":
