@@ -21,8 +21,8 @@ def login(request):
 def navbar(request):
     return render(request,'navbar.html')
     
-def Giriraj_bharat_Gas(request):
-    return render(request,'Giriraj_bharat_Gas.html')
+def Sign_in(request):
+    return render(request,'sign_in.html')
 
 
     

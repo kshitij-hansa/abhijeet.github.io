@@ -7,5 +7,5 @@ urlpatterns = [
     path('navbar', views.navbar,name='navbar'),
     path('', views.index,name='index'),
     path('login/', views.login,name='login'),
-    path('Giriraj_bharat_Gas', views.Giriraj_bharat_Gas,name='Giriraj_bharat_Gas'),
+    path('sign_in', views.Sign_in,name='sign_in'),
 ]
