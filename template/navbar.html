@@ -33,24 +33,32 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/about">Contact Us</a>
               </li>
-<!-- 
-              <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/login">Login</a></li>
-            <li><a class="dropdown-item" href="#">Sign in</a></li>
-          </ul>
-        </li> -->
-             
             </ul>
+            
+{% if user.is_authenticated %}
+<div class="contaner" style="width: 5rem; border:solid red 3px; border-radius: 20px;">
+<li class="nav dropdown ml-5">
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+{{request.user}}
+</a>
+<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+<li><a class="dropdown-item" href="#">Action</a></li>
+<li><a class="dropdown-item" href="#">Another action</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="logout">Logout</a></li>
+</ul>
+</li>
+</div>
+{% else %}
+<button type="button" onclick="window.location.href='/login'" class="btn btn-outline-warning" style="border-radius: 30%; margin: 5px;font-size: 80%;">Login</button>
+
+<button type="button" onclick="window.location.href='/sign_in'" class="btn btn-outline-warning" style="border-radius: 30%; margin: 5px;font-size: 80%;">Sign in</button>
+
+{% endif %}
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-success" type="submit">Search</button>
             </form>
-            <button type="button" onclick="window.location.href='/login'" class="btn btn-outline-warning" style="border-radius: 30%; margin: 5px;font-size: 80%;">Login</button>
-            <button type="button" onclick="window.location.href='/sign_in'" class="btn btn-outline-warning" style="border-radius: 30%; margin: 5px;font-size: 80%;">Sign in</button>
 
           </div>
         </div>
