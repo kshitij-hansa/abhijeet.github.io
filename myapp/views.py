@@ -4,6 +4,7 @@ from myapp.models import Info
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import auth
 from django.contrib.auth.models import User
+# from myapp.models import Info
 
 
 
@@ -28,8 +29,8 @@ def Sign_in(request):
         con.save()
     return render(request,'sign_in.html')
 
-def Profile(request):
-    return render(request,'profile.html')
+# def Profile(request):
+#     return render(request,'profile.html')
 
 def Login(request):
     if request.method=='POST':
@@ -47,3 +48,8 @@ def Login(request):
 def Logout(request):
     logout(request)
     return render(request,'index.html')
+
+def Profile(request):
+    info = Info.objects.all()
+    context = {'blogs':info}
+    return render(request,'profile.html',context)
